@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/bsky-alignment/static/js/main.e715277a.js",
-    "static/js/39.ee6efe00.js": "/bsky-alignment/static/js/39.ee6efe00.js",
-    "favicon.ico": "/bsky-alignment/favicon.ico",
-    "index.html": "/bsky-alignment/index.html",
-    "favicon-32.png": "/bsky-alignment/favicon-32.png",
-    "favicon-16.png": "/bsky-alignment/favicon-16.png",
-    "manifest.json": "/bsky-alignment/manifest.json",
-    "serve.json": "/bsky-alignment/serve.json",
-    "main.e715277a.js.map": "/bsky-alignment/static/js/main.e715277a.js.map",
-    "39.ee6efe00.js.map": "/bsky-alignment/static/js/39.ee6efe00.js.map"
+    "main.js": "/static/js/main.e715277a.js",
+    "static/js/39.ee6efe00.js": "/static/js/39.ee6efe00.js",
+    "favicon.ico": "/favicon.ico",
+    "index.html": "/index.html",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon-16.png": "/favicon-16.png",
+    "manifest.json": "/manifest.json",
+    "serve.json": "/serve.json",
+    "main.e715277a.js.map": "/static/js/main.e715277a.js.map",
+    "39.ee6efe00.js.map": "/static/js/39.ee6efe00.js.map"
   },
   "entrypoints": [
     "static/js/39.ee6efe00.js",
