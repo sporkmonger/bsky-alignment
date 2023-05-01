@@ -1,9 +1,10 @@
 {
   "background_color": "#ffffff",
+  "description": "Scans your BlueSky social graph to find missing connections and shared block decisions",
   "display": "standalone",
   "lang": "en",
-  "name": "bsky-alignment",
-  "short_name": "bsky-alignment",
+  "name": "Alignment",
+  "short_name": "Alignment",
   "start_url": "/?utm_source=web_app_manifest",
   "orientation": "portrait"
 }
