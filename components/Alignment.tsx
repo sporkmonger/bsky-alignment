@@ -290,7 +290,7 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
                         <Text>{(subject.pignistic || 0.0).toLocaleString(undefined, { maximumFractionDigits: 3 })}</Text>
                     </View>
                 )) : (
-                    <Text>Trying your patience... slowly fetching data from your graph...</Text>
+                    <Text>Trying your patience... slowly fetching data from your graph... setting BlueSky's servers on 🔥...</Text>
                 )}
             </View>
         </>
