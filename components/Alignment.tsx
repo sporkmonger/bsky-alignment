@@ -251,6 +251,11 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
         <>
             <StatusBar style="auto" />
             <View style={styles.container}>
+                {subjects ? (
+                    <Text>
+                        Higher numbers indicate greater overall alignment with your existing network. Lower numbers indicate profiles that your network has mutually blocked.
+                    </Text>
+                ) : (<></>)}
                 {subjects ? subjects.map((subject) => (
                     <View key={subject.profile.handle || subject.profile.did} style={styles.profile}>
                         <View>
@@ -282,7 +287,7 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
                                 @{subject.profile.handle}
                             </Text>
                         </View>
-                        <Text>{(subject.pignistic || 0.0).toLocaleString(undefined, { maximumFractionDigits: 2 })}</Text>
+                        <Text>{(subject.pignistic || 0.0).toLocaleString(undefined, { maximumFractionDigits: 3 })}</Text>
                     </View>
                 )) : (
                     <Text>Trying your patience... slowly fetching data from your graph...</Text>
