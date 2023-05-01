@@ -22,9 +22,6 @@ import { Decision, Outcome } from './helpers/decision';
 import { LoginProps, LoginData, LoginResponseDataType, AccessJwtType, RefreshJwtType } from './components/types';
 
 export default function App() {
-
-  Platform.select({ web: `Alignment` });
-
   // From https://github.com/louislva/skyline under MIT license
   // {
 
