@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "bsky-alignment",
-    "slug": "bsky-alignment",
+    "name": "Alignment",
+    "slug": "alignment",
+    "description": "Scans your BlueSky social graph to find missing connections and shared block decisions",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

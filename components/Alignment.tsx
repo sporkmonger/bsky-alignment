@@ -68,6 +68,30 @@ const fetchSubjects = async (agent: BskyAgent, identifier: string): Promise<Map<
             }
 
             {
+                // first page only
+                const response: any = await agent.api.com.atproto.repo.listRecords({
+                    repo: follow.did,
+                    collection: 'app.bsky.graph.block',
+                });
+
+                if (response.success) {
+                    let actors = response.data.records.map((blockRecord: any) => {
+                        return blockRecord.value.subject;
+                    })
+
+                    if (actors.length > 0) {
+                        const profileResponse: any = await agent.getProfiles({ actors: actors });
+                        if (profileResponse.success) {
+                            for (var followBlockee of profileResponse.data.profiles) {
+                                mergeSubjectData(followBlockee, subjects, false, 0.4);
+                            }
+                        } else {
+                            // TODO: Handle error
+                        }
+                    }
+                } else {
+                    // TODO: Handle error
+                }
             }
         }
     }
@@ -172,10 +196,12 @@ const fetchSubjects = async (agent: BskyAgent, identifier: string): Promise<Map<
     subjects.forEach((subject) => {
         if (subject.profile.viewer) {
             if (subject.profile.viewer.blockedBy) {
-                subject.decisions.push(new Decision(0.0, 0.6, 0.4));
+                subject.decisions.push(new Decision(0.0, 0.3, 0.7));
             }
         }
     });
+
+    console.log('expensive api calls done');
 
     return subjects;
 }
@@ -226,7 +252,7 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
             <StatusBar style="auto" />
             <View style={styles.container}>
                 {subjects && subjects.map((subject) => (
-                    <View key={subject.profile.handle} style={styles.profile}>
+                    <View key={subject.profile.handle || subject.profile.did} style={styles.profile}>
                         <View>
                             {subject.profile.avatar ? (
                                 <Image style={styles.avatar} source={{ uri: subject.profile.avatar, height: 40, width: 40 }} />

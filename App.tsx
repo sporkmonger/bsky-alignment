@@ -7,6 +7,7 @@ import {
   Button,
   Alert,
   ScrollView,
+  Platform,
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -21,6 +22,9 @@ import { Decision, Outcome } from './helpers/decision';
 import { LoginProps, LoginData, LoginResponseDataType, AccessJwtType, RefreshJwtType } from './components/types';
 
 export default function App() {
+
+  Platform.select({ web: `Alignment` });
+
   // From https://github.com/louislva/skyline under MIT license
   // {
 
