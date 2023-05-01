@@ -251,7 +251,7 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
         <>
             <StatusBar style="auto" />
             <View style={styles.container}>
-                {subjects && subjects.map((subject) => (
+                {subjects ? subjects.map((subject) => (
                     <View key={subject.profile.handle || subject.profile.did} style={styles.profile}>
                         <View>
                             {subject.profile.avatar ? (
@@ -284,7 +284,9 @@ const Alignment: FunctionComponent<AlignmentProps> = (props) => {
                         </View>
                         <Text>{(subject.pignistic || 0.0).toLocaleString(undefined, { maximumFractionDigits: 2 })}</Text>
                     </View>
-                ))}
+                )) : (
+                    <Text>Trying your patience... slowly fetching data from your graph...</Text>
+                )}
             </View>
         </>
     );
