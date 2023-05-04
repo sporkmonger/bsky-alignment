@@ -28,10 +28,10 @@ const Login: FunctionComponent<LoginProps> = (props) => {
     return (
         <>
             <StatusBar style="auto" />
-            <Text>Don't enter credentials into the wrong website, but I'm just a sign, not a cop.</Text>
+            <Text>Don't enter your primary BlueSky credentials. Under Settings &gt; Advanced &gt; App Passwords, Add App Password and use that credential to log in instead. This may be safely revoked later.</Text>
             <Text style={styles.label}>BlueSky ID</Text>
             <TextInput autoCapitalize="none" style={styles.input} value={identifier} onChangeText={(identifier) => setIdentifier(identifier)} />
-            <Text style={styles.label}>BlueSky Password</Text>
+            <Text style={styles.label}>BlueSky App Password</Text>
             <TextInput autoCapitalize="none" style={[styles.input, { marginBottom: 8 }]} secureTextEntry={true} value={password} onChangeText={(password) => setPassword(password)} />
             <Button title="Submit" onPress={handleSubmit(onSubmit)} />
         </>
