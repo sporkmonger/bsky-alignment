@@ -72,6 +72,8 @@ const fetchSubjects = async (agent: BskyAgent, identifier: string): Promise<Map<
                 const response: any = await agent.api.com.atproto.repo.listRecords({
                     repo: follow.did,
                     collection: 'app.bsky.graph.block',
+                    // we can only retrieve 25 profiles at once
+                    limit: 25,
                 });
 
                 if (response.success) {
